@@ -10,7 +10,7 @@
 
 using namespace std;
 
-struct Lead 
+struct Lead
 {
     string firstName;
     string lastName;
@@ -18,7 +18,7 @@ struct Lead
     string phoneNumber;
 };
 
-int main() 
+int main()
 {
     ifstream johnFile, janeFile;
 
@@ -30,7 +30,7 @@ int main()
     unordered_set<string> janeLeadsSet;
     unordered_set<string> commonLeadsSet;
 
-    while (getline(johnFile, line)) 
+    /*while (getline(johnFile, line)) 
     {
         Lead lead;
         stringstream inputString(line);
@@ -40,18 +40,45 @@ int main()
         getline(inputString, lead.company, ',');
         getline(inputString, lead.phoneNumber, ',');
 
-        /*{
-            cout << "First Name: " << firstName << endl;
-            cout << "Last Name: " << lastName << endl;
-            cout << "Company: " << company << endl;
-            cout << "Phone Number: " << phoneNumber << endl;
-            cout << "_____________________________________________" << endl;
-        }*/
+      //  {
+         //   cout << "First Name: " << firstName << endl;
+          //  cout << "Last Name: " << lastName << endl;
+          //  cout << "Company: " << company << endl;
+         //   cout << "Phone Number: " << phoneNumber << endl;
+          //  cout << "_____________________________________________" << endl;
+       // }
 
-        johnLeadsSet.insert(lead.phoneNumber);
+    johnLeadsSet.insert(lead.phoneNumber);
+
+    }*/
+
+    while (getline(johnFile, line))
+    {
+        Lead lead;
+        stringstream inputString(line);
+
+        string field;
+        vector<string> fields;
+
+        while (getline(inputString, field, ','))
+        {
+            fields.push_back(field);
+        }
+
+        if (fields.size() == 4)
+        {
+            lead.firstName = fields[0];
+            lead.lastName = fields[1];
+            lead.company = fields[2];
+            lead.phoneNumber = fields[3];
+
+            lead.company = lead.company.substr(1, lead.company.size() - 2); 
+
+            johnLeadsSet.insert(lead.phoneNumber);
+        }
     }
 
-    while (getline(janeFile, line)) 
+    /* while (getline(janeFile, line)) 
     {
         Lead lead;
         stringstream inputString(line);
@@ -61,34 +88,56 @@ int main()
         getline(inputString, lead.company, ',');
         getline(inputString, lead.phoneNumber, ',');
 
-        /*{
-            cout << "First Name: " << firstName << endl;
-            cout << "Last Name: " << lastName << endl;
-            cout << "Company: " << company << endl;
-            cout << "Phone Number: " << phoneNumber << endl;
-            cout << "_____________________________________________" << endl;
-        }*/
+       // {
+         //   cout << "First Name: " << firstName << endl;
+         //   cout << "Last Name: " << lastName << endl;
+          //  cout << "Company: " << company << endl;
+          //  cout << "Phone Number: " << phoneNumber << endl;
+          //  cout << "_____________________________________________" << endl;
+        //}
 
-        janeLeadsSet.insert(lead.phoneNumber);
+    janeLeadsSet.insert(lead.phoneNumber);
+    }*/
+
+    while (getline(janeFile, line))
+    {
+        Lead lead;
+        stringstream inputString(line);
+
+        string field;
+        vector<string> fields;
+
+        while (getline(inputString, field, ','))
+        {
+            fields.push_back(field);
+        }
+
+        if (fields.size() == 4)
+        {
+            lead.firstName = fields[0];
+            lead.lastName = fields[1];
+            lead.company = fields[2];
+            lead.phoneNumber = fields[3];
+
+            lead.company = lead.company.substr(1, lead.company.size() - 2); 
+
+            janeLeadsSet.insert(lead.phoneNumber);
+        }
     }
-
+   
     ofstream commonCsvFile("New Files/Common.csv");
-    for (const string& phoneNumber : johnLeadsSet) 
+    for (const string& phoneNumber : johnLeadsSet)
     {
-        if (janeLeadsSet.count(phoneNumber)) 
+        if (janeLeadsSet.count(phoneNumber))
         {
             commonLeadsSet.insert(phoneNumber);
         }
     }
 
     cout << "Common Leads:" << endl;
-    for (const string& phoneNumber : commonLeadsSet) 
-    {
-        cout << phoneNumber << endl;
-    }
-
     for (const string& phoneNumber : commonLeadsSet)
     {
+        cout << phoneNumber << endl;
         commonCsvFile << phoneNumber << "\n";
     }
     commonCsvFile.close();
@@ -96,6 +145,7 @@ int main()
 
     return 0;
 }
+
 
 
 
