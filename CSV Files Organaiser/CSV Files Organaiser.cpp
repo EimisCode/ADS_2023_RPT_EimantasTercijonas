@@ -11,16 +11,40 @@ using namespace std;
 
 int main()
 {
-    ifstream inputFile;
-    inputFile.open("../SampleData/johns_leads_250.csv");
+    ifstream johnFile, janeFile;
+
+
+    johnFile.open("../SampleData/johns_leads_20.csv");
+    janeFile.open("../SampleData/janes_leads_20.csv");
     
     string line = "";
-    while (getline(inputFile, line ))
+    while (getline(johnFile, line ))
     {
         string firstName, lastName, company, phoneNumber;
 
         stringstream inputString (line);
         
+        getline(inputString, firstName, ',');
+        getline(inputString, lastName, ',');
+        getline(inputString, company, ',');
+        getline(inputString, phoneNumber, ',');
+
+        line = "";
+
+        /*{
+            cout << "First Name: " << firstName << endl;
+            cout << "Last Name: " << lastName << endl;
+            cout << "Company: " << company << endl;
+            cout << "Phone Number: " << phoneNumber << endl;
+            cout << "_____________________________________________" << endl;
+        }*/
+    }
+    while (getline(janeFile, line))
+    {
+        string firstName, lastName, company, phoneNumber;
+
+        stringstream inputString(line);
+
         getline(inputString, firstName, ',');
         getline(inputString, lastName, ',');
         getline(inputString, company, ',');
@@ -35,9 +59,8 @@ int main()
             cout << "Phone Number: " << phoneNumber << endl;
             cout << "_____________________________________________" << endl;
         }
-
-        
     }
+
     return 0;
 }
 
