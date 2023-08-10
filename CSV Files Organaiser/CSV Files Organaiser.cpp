@@ -1,6 +1,3 @@
-// CSV Files Organaiser.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -30,7 +27,7 @@ int main()
     unordered_set<string> janeLeadsSet;
     unordered_set<string> commonLeadsSet;
 
-    /*while (getline(johnFile, line)) 
+    while (getline(johnFile, line)) 
     {
         Lead lead;
         stringstream inputString(line);
@@ -40,45 +37,10 @@ int main()
         getline(inputString, lead.company, ',');
         getline(inputString, lead.phoneNumber, ',');
 
-      //  {
-         //   cout << "First Name: " << firstName << endl;
-          //  cout << "Last Name: " << lastName << endl;
-          //  cout << "Company: " << company << endl;
-         //   cout << "Phone Number: " << phoneNumber << endl;
-          //  cout << "_____________________________________________" << endl;
-       // }
-
-    johnLeadsSet.insert(lead.phoneNumber);
-
-    }*/
-
-    while (getline(johnFile, line))
-    {
-        Lead lead;
-        stringstream inputString(line);
-
-        string field;
-        vector<string> fields;
-
-        while (getline(inputString, field, ','))
-        {
-            fields.push_back(field);
-        }
-
-        if (fields.size() == 4)
-        {
-            lead.firstName = fields[0];
-            lead.lastName = fields[1];
-            lead.company = fields[2];
-            lead.phoneNumber = fields[3];
-
-            lead.company = lead.company.substr(1, lead.company.size() - 2); 
-
-            johnLeadsSet.insert(lead.phoneNumber);
-        }
+        johnLeadsSet.insert(lead.phoneNumber);
     }
 
-    /* while (getline(janeFile, line)) 
+    while (getline(janeFile, line)) 
     {
         Lead lead;
         stringstream inputString(line);
@@ -88,41 +50,7 @@ int main()
         getline(inputString, lead.company, ',');
         getline(inputString, lead.phoneNumber, ',');
 
-       // {
-         //   cout << "First Name: " << firstName << endl;
-         //   cout << "Last Name: " << lastName << endl;
-          //  cout << "Company: " << company << endl;
-          //  cout << "Phone Number: " << phoneNumber << endl;
-          //  cout << "_____________________________________________" << endl;
-        //}
-
-    janeLeadsSet.insert(lead.phoneNumber);
-    }*/
-
-    while (getline(janeFile, line))
-    {
-        Lead lead;
-        stringstream inputString(line);
-
-        string field;
-        vector<string> fields;
-
-        while (getline(inputString, field, ','))
-        {
-            fields.push_back(field);
-        }
-
-        if (fields.size() == 4)
-        {
-            lead.firstName = fields[0];
-            lead.lastName = fields[1];
-            lead.company = fields[2];
-            lead.phoneNumber = fields[3];
-
-            lead.company = lead.company.substr(1, lead.company.size() - 2); 
-
-            janeLeadsSet.insert(lead.phoneNumber);
-        }
+        janeLeadsSet.insert(lead.phoneNumber);
     }
    
     ofstream commonCsvFile("New Files/Common.csv");
@@ -134,7 +62,8 @@ int main()
         }
     }
 
-    cout << "Common Leads:" << endl;
+    cout << "____________________________________________________" << endl;
+    cout << "Common Leads:"<< "\n" << endl;
     for (const string& phoneNumber : commonLeadsSet)
     {
         cout << phoneNumber << endl;
@@ -142,10 +71,32 @@ int main()
     }
     commonCsvFile.close();
 
+    ofstream johnUniqueCsvFile("New Files/John's Unique.csv"); 
+    cout << "____________________________________________________" << endl;
+    cout << "John's Unique Files: "<< "\n" << endl;
+    for (const string& phoneNumber : johnLeadsSet) 
+    {
+        if (!janeLeadsSet.count(phoneNumber)) 
+        {
+            cout << phoneNumber << endl;
+            johnUniqueCsvFile << phoneNumber << "\n"; 
+        }
+    }
+    johnUniqueCsvFile.close();
+
+    ofstream janeUniqueCsvFile("New Files/Jane's Unique.csv");
+    cout << "____________________________________________________" << endl;
+    cout << "Jane's Unique Files: " <<"\n" << endl;
+
+    for (const string& phoneNumber : janeLeadsSet) 
+    {
+        if (!johnLeadsSet.count(phoneNumber)) 
+        {
+            cout << phoneNumber << endl;
+            janeUniqueCsvFile << phoneNumber << "\n"; 
+        }
+    }
+    janeUniqueCsvFile.close();
 
     return 0;
 }
-
-
-
-
