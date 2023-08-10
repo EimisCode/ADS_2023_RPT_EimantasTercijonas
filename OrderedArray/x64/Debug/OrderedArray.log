@@ -1,5 +1,19 @@
-﻿  MySet.cpp
-  OrderedArray.cpp
-  Generating Code...
-MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-C:\Users\eimis\OneDrive\Desktop\Repeat\OrderedArray\x64\Debug\OrderedArray.exe : fatal error LNK1120: 1 unresolved externals
+﻿  OrderedArray.cpp
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(7,18): error C2995: 'OrderedArray<T>::OrderedArray(int)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(5): message : see declaration of 'OrderedArray<T>::OrderedArray'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(11,19): error C2995: 'OrderedArray<T>::~OrderedArray(void)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(6): message : see declaration of 'OrderedArray<T>::~OrderedArray'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(16,23): error C2995: 'void OrderedArray<T>::push(const T &)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(8): message : see declaration of 'OrderedArray<T>::push'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(35,22): error C2995: 'int OrderedArray<T>::length(void) const': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(9): message : see declaration of 'OrderedArray<T>::length'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(40,20): error C2995: 'T OrderedArray<T>::getElement(int) const': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(10): message : see declaration of 'OrderedArray<T>::getElement'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(50,23): error C2995: 'bool OrderedArray<T>::remove(int)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(11): message : see declaration of 'OrderedArray<T>::remove'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(64,22): error C2995: 'int OrderedArray<T>::search(const T &) const': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(12): message : see declaration of 'OrderedArray<T>::search'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(85,23): error C2995: 'void OrderedArray<T>::clear(void)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(13): message : see declaration of 'OrderedArray<T>::clear'
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(93,23): error C2995: 'void OrderedArray<T>::resize(void)': function template has already been defined
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.h(21): message : see declaration of 'OrderedArray<T>::resize'
