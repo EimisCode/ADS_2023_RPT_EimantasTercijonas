@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="SampleData">
+      <UniqueIdentifier>{91b96632-145f-4503-9f9d-3b818e651d14}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CSV Files Organaiser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SampleData\janes_leads_20.csv">
+      <Filter>SampleData</Filter>
+    </None>
+    <None Include="..\SampleData\janes_leads_250.csv">
+      <Filter>SampleData</Filter>
+    </None>
+    <None Include="..\SampleData\johns_leads_20.csv">
+      <Filter>SampleData</Filter>
+    </None>
+    <None Include="..\SampleData\johns_leads_250.csv">
+      <Filter>SampleData</Filter>
+    </None>
   </ItemGroup>
 </Project>

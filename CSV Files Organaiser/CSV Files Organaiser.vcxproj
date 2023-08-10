@@ -129,6 +129,12 @@
   <ItemGroup>
     <ClCompile Include="CSV Files Organaiser.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SampleData\janes_leads_20.csv" />
+    <None Include="..\SampleData\janes_leads_250.csv" />
+    <None Include="..\SampleData\johns_leads_20.csv" />
+    <None Include="..\SampleData\johns_leads_250.csv" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
