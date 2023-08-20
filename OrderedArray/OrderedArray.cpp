@@ -10,7 +10,7 @@ int main()
     intArray.push(5);
     intArray.push(2);
     intArray.push(8);
-    intArray.push(33);
+    intArray.push(-33);
     intArray.push(11);
     intArray.push(6);
     intArray.push(12);
@@ -19,7 +19,7 @@ int main()
     intArray.push(12);
     intArray.push(15);
     intArray.push(45);
-    intArray.push(24);
+    intArray.push(24.5);
 
     std::cout << "Array length: " << intArray.length() << std::endl;
     std::cout << std::endl;
@@ -35,11 +35,11 @@ int main()
 
     if (removed) 
     {
-        std::cout << "Element at index " << indexRemove << " removed." << std::endl;
+        std::cout << "Element at index " << indexRemove << " removed" << std::endl;
     }
     else 
     {
-        std::cout << "Element at index " << indexRemove << " not found or not removed." << std::endl;
+        std::cout << "Element at index " << indexRemove << " not found or not removed" << std::endl;
     }
     std::cout << std::endl;
 
@@ -59,7 +59,7 @@ int main()
     }
     else
     {
-        std::cout << "3 not found in the array." << std::endl;
+        std::cout << "3 not found in the array" << std::endl;
     };
     std::cout << std::endl;
 

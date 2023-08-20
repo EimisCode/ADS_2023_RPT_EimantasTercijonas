@@ -1,2 +1,7 @@
 ﻿  OrderedArray.cpp
+C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\OrderedArray.cpp(22,19): warning C4244: 'argument': conversion from 'double' to 'const T', possible loss of data
+          with
+          [
+              T=int
+          ]
   OrderedArray.vcxproj -> C:\Users\eimis\OneDrive\Desktop\Repeat\ADS_2023_RPT_EimantasTercijonas\OrderedArray\x64\Debug\OrderedArray.exe
